@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdthkhjfo3hhd"]
+[gd_scene load_steps=8 format=3 uid="uid://cdthkhjfo3hhd"]
 
 [ext_resource type="PackedScene" uid="uid://5u2epcfwxwba" path="res://map.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bc6he0d1tmx55" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d4aewun7u0taa" path="res://camera.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bt4yda0o5s86e" path="res://checkpoint.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://c8se4q4gknncy" path="res://dead.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://t2avxixdrvge" path="res://Assets/tile_0044.png" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(31.667883, 42.137207)
 
 [node name="Main" type="Node2D"]
 
@@ -10,3 +17,56 @@ position = Vector2(-315, 97)
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(72, 10)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("camera_follow") instance=ExtResource("3_h2yge")]
+position = Vector2(54, 53)
+camera_follow = NodePath("../Player")
+
+[node name="spawnpoint" type="Node2D" parent="."]
+position = Vector2(-320, 142)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(428, 144)
+
+[node name="Checkpoint" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-85, -180)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(235, -862)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(205, -1098)
+
+[node name="dead" type="Node2D" parent="."]
+script = ExtResource("5_lquwl")
+
+[node name="Area2D2" type="Area2D" parent="dead"]
+position = Vector2(466, -932)
+scale = Vector2(9.725943, 1.1154029)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dead/Area2D2"]
+position = Vector2(15.011398, -2.241333)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hud"]
+offset_left = 172.0
+offset_top = -37.0
+offset_right = 234.0
+offset_bottom = 3.0
+
+[node name="TextureRect" type="TextureRect" parent="hud/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="hud/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="hud/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+stretch_mode = 2
