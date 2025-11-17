@@ -4,18 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cv7r24tpdx0sd" path="res://Assets/tilemap-characters.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(20, 22)
+size = Vector2(18, 18)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 1)
 texture = ExtResource("2_onrkg")
 hframes = 9
 vframes = 3
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_i3pqv")
