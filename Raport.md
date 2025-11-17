@@ -18,4 +18,5 @@ Comme on a déjà quelque base avec godot, on vas se focaliser sur des outils et
 - Stencil Buffer
 - Abstracts class
 - Shaders
+
 On vas se concentrer sur un jeux plus simple et complet que complexe, pour bien pouvoir utiliser au mieux les différentes fonctionnalités que l'on souhaite découvrir.
