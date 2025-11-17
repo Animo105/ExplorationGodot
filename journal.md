@@ -14,3 +14,8 @@ quant à lui, est open source, donc il est possible de modifier le moteur comme 
 ## Émeric Leclerc
 ### 10 novembre 2025
 Avec l'IA j'ai découvert [Kenny](https://kenney.nl/), une librairie d'assets libre de droit pour faire des jeux.
+
+### 17 novembre 2025
+Je me suis mis a essayer les shaders, J'ai essayer d'en générer avec chatGPT mais il n'as jamais réussi a 
+faire quelque chose qui fonctionne. J'ai réessayer avec Claude et il est bien meilleur a générer du code et a l'expliquer.
+J'ai aussi découvert de nouvelle fonctionnalité avec l'aide de l'IA (ease mode des animations player)
