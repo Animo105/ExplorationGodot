@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciqpy4tbb4ul5"]
+
+[ext_resource type="Script" uid="uid://b8fa4ti6o7mys" path="res://Ennemi/Chauve souris/script-Manus.gd" id="1_u1cis"]
+[ext_resource type="Texture2D" uid="uid://cv7r24tpdx0sd" path="res://Assets/tilemap-characters.png" id="2_ig0ui"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0ij1"]
+
+[node name="Ennemi" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_u1cis")
+acceleration = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m0ij1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ig0ui")
+hframes = 9
+vframes = 3
+frame = 24
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

@@ -19,3 +19,17 @@ Avec l'IA j'ai découvert [Kenny](https://kenney.nl/), une librairie d'assets li
 Je me suis mis a essayer les shaders, J'ai essayer d'en générer avec chatGPT mais il n'as jamais réussi a 
 faire quelque chose qui fonctionne. J'ai réessayer avec Claude et il est bien meilleur a générer du code et a l'expliquer.
 J'ai aussi découvert de nouvelle fonctionnalité avec l'aide de l'IA (ease mode des animations player)
+
+### 20 movembre 2025
+j'ai fait 3 essaie d'ennemi volant avec des ia.
+**ChatGPT**
+L'ennemi le plus simpliste, fesais juste aller au player selon un straight path ver lui. 
+A quelque difficulter a avancer et a naviguer a travers des obstacles. Pas le meilleur mais
+comparer au autre il bouge plus smoothly
+**Claude**
+A fait un ennemi avec un NavigationAgent et NaviguationRegion, require beaucoup plus de preparation
+mais fonctionne mieux. malheureusement il n'as pas bien setup le NaviguationAgent donc ca ne fonctionne pas.
+Il a essayer de faire quelque chose de complet avec des states mais ca n'as pas beaucoup marcher.
+**Manus**
+A aussi fait un ennemi avec un NavigationAgent et NaviguationRegion mais a bien setup le NavigationAgent.
+Le script est très simple a comprendre et laisse des variables pour modifier plein de chose (plus que les 2 autres.)
