@@ -51,3 +51,8 @@ Il a essayer de faire quelque chose de complet avec des states mais ca n'as pas 
 **Manus**
 A aussi fait un ennemi avec un NavigationAgent et NaviguationRegion mais a bien setup le NavigationAgent.
 Le script est très simple a comprendre et laisse des variables pour modifier plein de chose (plus que les 2 autres.)
+
+### 24 novembre
+J'ai essayer de faire un ennemi en segment. J'ai essayer d'abort avec chatGPT mais il n'arrivais pas a faire quelque chose de concluant.
+Claude aussi ce n'étais pas super mais déja mieux. J'ai remarquer que lors que la tache est diviser en plusieurs fichier 
+(fichier de l'ennemi principale + fichier du segment) l'ia a du mal à le faire.

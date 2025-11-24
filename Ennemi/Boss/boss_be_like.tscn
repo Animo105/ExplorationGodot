@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmbj6rti4n1m8"]
+
+[ext_resource type="Script" uid="uid://bu36p0ehdp8d8" path="res://Ennemi/Boss/boss_be_like.gd" id="1_4qhoi"]
+[ext_resource type="Texture2D" uid="uid://drq4bcaaw0v0d" path="res://Ennemi/Boss/tile_0021.png" id="2_4ve6p"]
+[ext_resource type="PackedScene" uid="uid://bbn6tqpphm4y0" path="res://Ennemi/Boss/boss_segment.tscn" id="3_768ou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ve6p"]
+
+[node name="Boss be like" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_4qhoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ve6p")
+
+[node name="Boss Segment" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(-1, 1)
+
+[node name="Boss Segment2" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(-1, 2)
+
+[node name="Boss Segment3" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(0, 1)
+
+[node name="Boss Segment4" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(0, 1)
+
+[node name="Boss Segment5" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(0, 1)
+
+[node name="Boss Segment6" parent="." instance=ExtResource("3_768ou")]
+position = Vector2(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4ve6p")
+
+[node name="left" type="RayCast2D" parent="."]
+position = Vector2(-14, 0)
+target_position = Vector2(0, 19)
+
+[node name="right" type="RayCast2D" parent="."]
+position = Vector2(15, 0)
+target_position = Vector2(0, 19)
