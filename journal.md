@@ -19,9 +19,12 @@ de niveau, car il permet d'importer une grille avec différentes textures, de le
 collisions et de les placés sur une grille [tilemaps](https://docs.godotengine.org/en/stable/tutorials/3d/using_gridmaps.html)
 
 ### 24 Novembre 2025
-Aujourd'hui, j'ai travaillé sur le hud des vies du jeu. Grâce à Chatgpt, j'ai pû comprendre comment cela fonctionnait.
+Aujourd'hui, j'ai travaillé sur le HUD des vies du jeu. Grâce à Chatgpt, j'ai pû comprendre comment cela fonctionnait.
 Il m'a aidé à comprendre qu'il y avait des conteneurs, et qu'ils fonctionnaient un peu comme des flex-box ou des grid en css, 
 ce qui permet de bien comprendre rapidement leur fonctionnement.
+
+J'ai fais des recherches également pour les animations, mais j'ai trouvée que chatgpt était pas super utile, parce qu'il disait
+souvent de cliquer sur un certain bouton que je ne trouvais pas, car pas d'image.
 
 
 

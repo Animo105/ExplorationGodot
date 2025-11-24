@@ -84,3 +84,4 @@ func respawn() :
 	
 func add_life() :
 	life += 1
+	hud.update_lives(life)

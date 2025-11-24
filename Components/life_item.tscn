@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://detusqs7pgad5"]
+
+[ext_resource type="Script" uid="uid://bo0qkerq34ede" path="res://Components/life_item.gd" id="1_wpldr"]
+[ext_resource type="Shader" uid="uid://cuhm1ku104dy4" path="res://Components/life_item.gdshader" id="2_s4cke"]
+[ext_resource type="Texture2D" uid="uid://t2avxixdrvge" path="res://Assets/tile_0044.png" id="2_xbyql"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pivo"]
+shader = ExtResource("2_s4cke")
+shader_parameter/speed = 2.000000095
+shader_parameter/width = 0.15
+shader_parameter/shine_color = Color(1, 0.17254902, 0.05490196, 1)
+shader_parameter/intensity = 1.5
+
+[sub_resource type="Animation" id="Animation_wpldr"]
+resource_name = "floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.26666668, 0.76666665),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(0, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_xbyql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbyql"]
+_data = {
+&"RESET": SubResource("Animation_xbyql"),
+&"floating": SubResource("Animation_wpldr")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4cke"]
+size = Vector2(14, 12)
+
+[node name="LifeItem" type="Node2D"]
+script = ExtResource("1_wpldr")
+
+[node name="LifePickup" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="LifePickup"]
+material = SubResource("ShaderMaterial_0pivo")
+texture = ExtResource("2_xbyql")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LifePickup/Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_xbyql")
+}
+autoplay = "floating"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LifePickup"]
+visible = false
+shape = SubResource("RectangleShape2D_s4cke")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 35
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(6, 6)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+angular_velocity_min = -250.0
+angular_velocity_max = 250.0
+linear_accel_max = 5.0
+scale_amount_min = 0.0
+color = Color(1, 0.54124093, 0.4767593, 1)
+
+[connection signal="body_entered" from="LifePickup" to="." method="_on_life_pickup_body_entered"]
