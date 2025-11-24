@@ -28,3 +28,11 @@ func _physics_process(delta):
 		global_position += direction * move_distance * 10 * delta
 		
 	current_position = global_position
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Player" :
+		var player = get_parent().get_parent().get_node("Player")
+		player.velocity.y = -700
+		print("touched")
+		queue_free()
