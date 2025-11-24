@@ -1,11 +1,14 @@
 extends CharacterBody2D
 class_name Player
 
+var life = 3
+var hud
 @export var speed := 200
 @export var gravity := 1200
 @export var jump_force := -300
 var anim_timer = 0.0
 @export var anim_speed : float = 0.07
+var just_respawned;
 
 # Influence du maintien du saut
 @export var jump_gravity_multiplier := 0.5   # gravité réduite pendant maintien
@@ -14,6 +17,9 @@ var anim_timer = 0.0
 func _ready() -> void:
 	var spawn = get_parent().get_node("spawnpoint")
 	global_position = spawn.global_position
+	hud = get_parent().get_node("HUD")
+	hud.update_lives(life);
+	just_respawned = false
 
 func _physics_process(delta):
 	# ----- GRAVITÉ -----
@@ -57,9 +63,24 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if Input.is_key_pressed(Key.KEY_R) :
-		respawn()
+		if just_respawned == false :
+			respawn()
+		just_respawned = true
+	if not Input.is_key_pressed(Key.KEY_R) :
+		just_respawned = false
+		
 
 func respawn() :
 	var spawn = get_parent().get_node("spawnpoint")
-	global_position = spawn.global_position
+	if (life > 1) :
+		global_position = spawn.global_position
+		life  = life - 1
+	else :
+		spawn.global_position = Vector2(-320.0, 142.0)
+		global_position = spawn.global_position
+		life = 3
+	hud.update_lives(life)
 	velocity = Vector2.ZERO
+	
+func add_life() :
+	life += 1

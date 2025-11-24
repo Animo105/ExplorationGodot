@@ -62,9 +62,7 @@ position = Vector2(205, -1098)
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("7_5vw27")
 
-[node name="GridContainer" type="GridContainer" parent="HUD"]
-offset_right = 107.0
-offset_bottom = 38.0
-columns = 5
-
-[connection signal="body_entered" from="dead/Area2D2" to="dead" method="_on_area_2d_2_body_entered"]
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Vies : 3"
