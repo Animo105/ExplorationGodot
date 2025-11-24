@@ -15,8 +15,7 @@ extends CharacterBody2D
 
 # Paramètres de navigation
 @export_group("Navigation")
-@export var update_target_interval: float = 0.1  ## Intervalle de mise à jour de la cible (secondes)
-@export var min_distance_to_player: float = 50.0  ## Distance minimale à maintenir avec le joueur (pixels)
+@export var min_distance_to_player: float = 20.0  ## Distance minimale à maintenir avec le joueur (pixels)
 
 # Paramètres d'évitement
 @export_group("Évitement")
@@ -24,10 +23,10 @@ extends CharacterBody2D
 @export var avoidance_radius: float = 32.0  ## Rayon de l'agent pour l'évitement (pixels)
 
 # Variables internes
-var _target_update_timer: float = 0.0
 var _safe_velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	$AnimatedSprite2D.play("default")
 	# Vérifier si le NavigationAgent2D existe, sinon en créer un
 	if not navigation_agent:
 		navigation_agent = get_node_or_null("NavigationAgent2D")
@@ -77,10 +76,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Mettre à jour la cible périodiquement
-	_target_update_timer += delta
-	if _target_update_timer >= update_target_interval:
-		_target_update_timer = 0.0
-		navigation_agent.target_position = player.global_position
+	navigation_agent.target_position = player.global_position
 	
 	# Vérifier si la navigation est terminée
 	if navigation_agent.is_navigation_finished():
@@ -103,9 +99,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Sans évitement, appliquer directement la vélocité
 		_move_with_velocity(desired_velocity, delta)
-	
-	# Rotation vers la direction de mouvement
-	_rotate_towards_direction(direction, delta)
 
 func _move_with_velocity(target_velocity: Vector2, delta: float) -> void:
 	"""Déplace l'ennemi avec une vélocité donnée"""
@@ -114,15 +107,6 @@ func _move_with_velocity(target_velocity: Vector2, delta: float) -> void:
 	
 	# Déplacer l'ennemi
 	move_and_slide()
-
-func _rotate_towards_direction(direction: Vector2, delta: float) -> void:
-	"""Fait pivoter l'ennemi vers la direction de mouvement"""
-	if direction.length() > 0.01:
-		# Calculer l'angle cible
-		var target_angle: float = direction.angle()
-		
-		# Interpolation pour une rotation fluide
-		rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	"""Callback appelé par NavigationAgent2D avec la vélocité sécurisée après calcul d'évitement"""
