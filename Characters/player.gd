@@ -73,9 +73,11 @@ func _physics_process(delta):
 func respawn() :
 	var spawn = get_parent().get_node("spawnpoint")
 	if (life > 1) :
+		$sfx/damaged.play()
 		life  = life - 1
 		get_parent().get_node("Camera").shake()
 	else :
+		$sfx/BossDefeat.play()
 		global_position = spawn.global_position
 		life = 3
 	hud.update_lives(life)
@@ -90,3 +92,9 @@ func set_dead(i):
 func add_life() :
 	life += 1
 	hud.update_lives(life)
+
+func play_heart_pickup():
+	$sfx/heart_pickup.play()
+
+func play_boss_defeat():
+	$sfx/BossDefeat.play()

@@ -1,15 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://detusqs7pgad5"]
+[gd_scene load_steps=10 format=3 uid="uid://detusqs7pgad5"]
 
-[ext_resource type="Script" uid="uid://bo0qkerq34ede" path="res://Components/life_item.gd" id="1_wpldr"]
-[ext_resource type="Shader" uid="uid://cuhm1ku104dy4" path="res://Components/life_item.gdshader" id="2_s4cke"]
-[ext_resource type="Texture2D" uid="uid://t2avxixdrvge" path="res://Assets/tile_0044.png" id="2_xbyql"]
+[ext_resource type="Script" uid="uid://bo0qkerq34ede" path="res://Components/Life item/life_item.gd" id="1_p52xb"]
+[ext_resource type="Shader" uid="uid://cuhm1ku104dy4" path="res://Components/Life item/life_item.gdshader" id="2_cdchp"]
+[ext_resource type="Texture2D" uid="uid://t2avxixdrvge" path="res://Assets/tile_0044.png" id="3_7b8p5"]
+[ext_resource type="AudioStream" uid="uid://tf6es86wdrcs" path="res://Assets/sons/damaged.ogg" id="4_cdchp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0pivo"]
-shader = ExtResource("2_s4cke")
+shader = ExtResource("2_cdchp")
 shader_parameter/speed = 2.000000095
 shader_parameter/width = 0.15
 shader_parameter/shine_color = Color(1, 0.17254902, 0.05490196, 1)
 shader_parameter/intensity = 1.5
+
+[sub_resource type="Animation" id="Animation_xbyql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wpldr"]
 resource_name = "floating"
@@ -27,21 +43,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 2), Vector2(0, -2)]
 }
 
-[sub_resource type="Animation" id="Animation_xbyql"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xbyql"]
 _data = {
 &"RESET": SubResource("Animation_xbyql"),
@@ -52,13 +53,13 @@ _data = {
 size = Vector2(14, 12)
 
 [node name="LifeItem" type="Node2D"]
-script = ExtResource("1_wpldr")
+script = ExtResource("1_p52xb")
 
 [node name="LifePickup" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="LifePickup"]
 material = SubResource("ShaderMaterial_0pivo")
-texture = ExtResource("2_xbyql")
+texture = ExtResource("3_7b8p5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LifePickup/Sprite2D"]
 root_node = NodePath("../..")
@@ -85,5 +86,9 @@ angular_velocity_max = 250.0
 linear_accel_max = 5.0
 scale_amount_min = 0.0
 color = Color(1, 0.54124093, 0.4767593, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cdchp")
+attenuation = 5.0
 
 [connection signal="body_entered" from="LifePickup" to="." method="_on_life_pickup_body_entered"]

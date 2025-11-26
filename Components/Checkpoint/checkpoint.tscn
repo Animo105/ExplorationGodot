@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt4yda0o5s86e"]
 
-[ext_resource type="Script" uid="uid://5t5prpn457gu" path="res://checkpoint.gd" id="1_r6hke"]
+[ext_resource type="Script" uid="uid://5t5prpn457gu" path="res://Components/Checkpoint/checkpoint.gd" id="1_r6hke"]
 [ext_resource type="Texture2D" uid="uid://b3tu04jc1so6k" path="res://Assets/tilemapBasic.png" id="2_tnhlw"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s20m7"]
 size = Vector2(20, 26)

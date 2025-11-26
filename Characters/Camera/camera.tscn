@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d4aewun7u0taa"]
 
-[ext_resource type="Script" uid="uid://cgj2vfoip0a87" path="res://camera.gd" id="1_u5kg4"]
+[ext_resource type="Script" uid="uid://cgj2vfoip0a87" path="res://Characters/Camera/camera.gd" id="1_u5kg4"]
+
 
 [sub_resource type="GDScript" id="GDScript_diie0"]
 script/source = "extends Camera2D

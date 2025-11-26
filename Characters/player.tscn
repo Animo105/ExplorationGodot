@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc6he0d1tmx55"]
+
+[ext_resource type="Script" uid="uid://joj0e72ocuev" path="res://Characters/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cv7r24tpdx0sd" path="res://Assets/tilemap-characters.png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://cos2dio15p3s0" path="res://Assets/sons/heart_pickup.mp3" id="3_l48on"]
+[ext_resource type="AudioStream" uid="uid://tf6es86wdrcs" path="res://Assets/sons/damaged.ogg" id="3_vb825"]
+[ext_resource type="AudioStream" uid="uid://lcdxg3hl6687" path="res://Assets/sons/boss_defeat.ogg" id="4_65n15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(18, 18)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_4flbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_onrkg")
+hframes = 9
+vframes = 3
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i3pqv")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="heart_pickup" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("3_l48on")
+
+[node name="BossDefeat" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("4_65n15")
+
+[node name="damaged" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("3_vb825")

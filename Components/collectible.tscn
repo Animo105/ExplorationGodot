@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bosb2ncdywu6i"]
-
-[ext_resource type="Script" uid="uid://btdkxdrwv7ei2" path="res://collectible.gd" id="1_8xoa5"]
-
-[node name="Collectible" type="Area2D"]
-script = ExtResource("1_8xoa5")
