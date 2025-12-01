@@ -10,6 +10,7 @@ var anim_timer = 0.0
 @export var anim_speed : float = 0.07
 var just_respawned;
 var dead = false
+var start_position : Vector2
 
 # Influence du maintien du saut
 @export var jump_gravity_multiplier := 0.5   # gravité réduite pendant maintien
@@ -18,6 +19,7 @@ var dead = false
 func _ready() -> void:
 	var spawn = get_parent().get_node("spawnpoint")
 	global_position = spawn.global_position
+	start_position = spawn.global_position
 	hud = get_parent().get_node("HUD")
 	hud.update_lives(life);
 	just_respawned = false
@@ -76,9 +78,11 @@ func respawn() :
 		$sfx/damaged.play()
 		life  = life - 1
 		get_parent().get_node("Camera").shake()
+		global_position = spawn.global_position
 	else :
 		$sfx/BossDefeat.play()
-		global_position = spawn.global_position
+		spawn.global_position = start_position
+		global_position = start_position
 		life = 3
 	hud.update_lives(life)
 	velocity = Vector2.ZERO
