@@ -47,7 +47,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.set_dead(true)
 			body.play_boss_defeat()
 			get_parent().get_node("Camera").zoom_boss()
-			await get_tree().create_timer(4.0).timeout
+			await get_tree().create_timer(2.5).timeout
 			$explosion.emitting = true
 			$Sprite2D.visible = false
 			get_parent().get_node("Camera").to_default()
