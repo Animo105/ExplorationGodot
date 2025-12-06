@@ -18,13 +18,16 @@ Nous avons aussi utiliser les tilemaps, un outil qui permet de se simplifier la 
 de niveau, car il permet d'importer une grille avec différentes textures, de leurs donner des différentes
 collisions et de les placés sur une grille [tilemaps](https://docs.godotengine.org/en/stable/tutorials/3d/using_gridmaps.html)
 
+En demandant à une intelligence artificielle (ChatGPT dans mon cas), il m'a conseillé sur le positionnement de mes éléments du jeux. Godot utilise un système de noeud, où chaque noeud représente un objet (Exemple, un noeud qui est une boite de collision, une texture d'un personnage (Sprite) ou une source de lumière). L'intelligence artificielle m'a indiquez qu'il fallait mettre certains noeuds obligatoirement dans un autre, sinon il n'allait pas fonctionner correctement comme on le voulait (Une boite de collision (CollisionShape2D) doit être dans un RigidBody, qui est un noeud qui interagie avec l'environnement).
+
 ### 24 Novembre 2025
-Aujourd'hui, j'ai travaillé sur le HUD des vies du jeu. Grâce à Chatgpt, j'ai pû comprendre comment cela fonctionnait.
-Il m'a aidé à comprendre qu'il y avait des conteneurs, et qu'ils fonctionnaient un peu comme des flex-box ou des grid en css, 
-ce qui permet de bien comprendre rapidement leur fonctionnement.
+Aujourd'hui, j'ai travaillé sur le HUD des vies du jeu. Grâce à Chatgpt, j'ai pû comprendre comment cela fonctionnait. Il m'a aidé à comprendre qu'il y avait des conteneurs, et qu'ils fonctionnaient un peu comme des flex-box ou des grid en css, ce qui permet de bien comprendre rapidement leur fonctionnement.
 
 J'ai fais des recherches également pour les animations, mais j'ai trouvée que chatgpt était pas super utile, parce qu'il disait
 souvent de cliquer sur un certain bouton que je ne trouvais pas, car pas d'image.
+
+### 1 Décembre 2025
+Cette période était dédiée (pour nous) à la finalisation des derniers éléments du jeu, ainsi qu'au développement de notre
 
 
 

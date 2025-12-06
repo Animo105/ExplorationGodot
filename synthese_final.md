@@ -23,9 +23,16 @@ L'intelligence artificielle était quand même d'une bonne utilité pour se proj
 Bien que l'IA sois utile pour facilité certaine tâche, coder n'est pas une de ses forces. Il y a eu plusieurs moment ou ChatGPT et les IA en général on aider pour les petites chose. Comme example lors des petits Shaders comme le shader de shine ou de outline, ou pour générer des petits script ou méthode comme le script pour le jump pad. Il est aussi bon pour expliquer des conceptes et trouver des fonction mathématique. Par contre, dès qu'on veux quelque chose d'un peux plus complexe, la majorité des IA ne fait pas une bonne job. La première fois, au tout début lors qu'on a voulu généré les assets (sprites) mais les images n'étais pas consistent, pas seamless, donc on a opter pour autre chose. Pareil pour des plus gros scripts, ChatGPT n'as pas réussi a me généré quelque chose qui fonctionne (et plus je demandais de réglé le code plus il hallucinais des methodes). Les Autres IA (Claude et Manus) ont fait mieux mais ca m'as pris un moment à avoir quelque chose de bien fonctionnel (et j'ai du changer certain truc à la main). Et pour généré des sons tout les IA que j'ai essayer étais extrêment limité, bien que je m'y attendais un peu lorsque j'ai essayer.
 En résumé, je ne pense pas qu'utiliser totalement l'IA pour coder est une bonne chose. Ça vas généralement moins bien fonctionner ou être totalement bugger qu'autre chose. Parcontre comme outils de recherche ou comme outils pour généré des petits bout de code peux être une bonne chose quand on sais comment bien demander quoi générer.
 
-## Nos opinions
+## Nos opinions sur Godot
 ### Émeric Leclerc :
 
 
 
 ### Jérémy Drapeau :
+D'après moi, Je pense que le moteur de jeu Godot à une très bonne place dans le développement de jeu indépendant. Il est beaucoup plus simple d'utilisation que les autres moyens de développement utilisé jusqu'à se jour à l'école pour créer des jeux.
+
+N'ayant pas vraiment utilisé d'autres moteurs de jeu, je ne peu pas vraiment décrire si je pense que Godot est meilleur que les autres. Je crois tout de même que l'aspect "Open source", gratuit d'utilisation et de publication est un des points forts, étant données que d'autres moteurs de jeux (Unity, UE, etc...) veulent une part du profit que le jeu fait. Cela pourrait être intéressant pour les petites équipes de développement, qui n'ont peut-être pas les moyens ou le désir de partager leurs profits avec de grande compagnie.
+
+Le moteur de jeu possède asser de documentation pour être capable de faire quand même pas mal de chose. Il est complet, supporte plusieurs types de jeux : 2D, 3D, réalité virtuelle et réalité augmentée, en plus d'être capable de compiler les jeux pour qu'ils puissent être joués sur console, ordinateur, téléphone et plein d'autres!
+
+Bref, c'est un très bon outil de développement. La communeautée y est dédié et il est possible de faire tellement de choses que c'est un moteur de jeu à considérer lors du développement d'un jeu.
