@@ -25,8 +25,9 @@ En résumé, je ne pense pas qu'utiliser totalement l'IA pour coder est une bonn
 
 ## Nos opinions sur Godot
 ### Émeric Leclerc :
+Godot est mon moteur de jeu préféré pour le moment. Pour avoir déjà essayer Unity, Godot est plus simple d'utilisation et plus facile à prendre en main et beaucoup plus légé. Niveau contenu, c'est sur Unity est un peu mieux mais c'est de moins en moins le cas avec toute les extentions créer par la communauté et les mise à jours régulière. La documentation est aussi plus complète que n'importe quel autre moteur que j'ai regarder jusqu'à présent. Le fait que ce sois open source aussi fait en sorte de ne pas avoir besoin de se soucier de licence ou de payé un montant pour utilisé l'engine.
 
-
+En brief, Godot est légé, performant pour sa taille et est très bien documenté. le fait qu'il sois open source en fait un très bon outils pour les petit développeur et permet à la communauté d'activement participer dans l'amélioration de l'engine. 
 
 ### Jérémy Drapeau :
 D'après moi, Je pense que le moteur de jeu Godot à une très bonne place dans le développement de jeu indépendant. Il est beaucoup plus simple d'utilisation que les autres moyens de développement utilisé jusqu'à se jour à l'école pour créer des jeux.
