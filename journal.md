@@ -63,3 +63,6 @@ Claude aussi ce n'étais pas super mais déja mieux. J'ai remarquer que lors que
 ### 26 novembere 2025
 J'ai pas fait grand chose, ajouter quelque son et organiser les fichiers. j'ai essayer de générer des sont par l'IA mais autre
 que des paroles, Manus na rien pu produire et ChatGPT semble limité a un certain set d'effet sonore pas super.
+
+### 1 décembre 2025
+J'ai jouer un peux avec les parallax layers pour faire le background.
